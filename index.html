@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Puskesmas Sei Taiwan</title>
+  
+  <!-- Panggil CSS Background & Style Utama -->
+  <link rel="stylesheet" href="Background.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- KOTAK/POP-UP PUTIH UTAMA -->
+  <div class="login-container">
+    
+    <!-- Logo & Tajuk -->
+    <div class="login-header">
+      <img src="logo-puskesmas.png" alt="Logo Puskesmas Sei Taiwan" class="logo-img">
+      <h2>Sistem Informasi</h2>
+      <h3>Puskesmas Sei Taiwan</h3>
+    </div>
+
+    <!-- Form Login -->
+    <form id="loginForm">
+      <div class="login-box">
+        
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="Masukkan Username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Masukkan Password" required>
+        </div>
+
+        <button type="submit" class="btn-login">Masuk ke Portal</button>
+
+        <!-- Garis Pemisah -->
+        <div class="separator">
+          <span>ATAU</span>
+        </div>
+
+        <!-- Butang Login Google SSO -->
+        <button type="button" class="btn-google">
+          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo">
+          Masuk dengan Google
+        </button>
+
+        <!-- Footer / Pautan Daftar -->
+        <div class="login-footer">
+          <p>Belum punya akun? <a href="#">Daftar Pasien Baru</a></p>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+
+</body>
+</html>

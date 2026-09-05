@@ -1,0 +1,157 @@
+/* 1. Bekas Pop-Up Putih Utama */
+.login-container {
+  background-color: rgba(255, 255, 255, 0.95); /* Putih dengan sedikit lutsinar */
+  width: 100%;
+  max-width: 380px;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Bayangan lembut */
+  border-top: 5px solid #27ae60; /* Aksen hijau hospital di bahagian atas */
+  box-sizing: border-box;
+}
+
+/* 2. Header: Logo & Tajuk */
+.login-header {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.logo-img {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.login-header h2 {
+  margin: 0;
+  font-size: 18px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.login-header h3 {
+  margin: 5px 0 0 0;
+  font-size: 16px;
+  color: #27ae60;
+  font-weight: 600;
+}
+
+/* 3. Borang Input */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #27ae60;
+  outline: none;
+}
+
+/* 4. Butang Log Masuk Utama */
+.btn-login {
+  width: 100%;
+  background-color: #27ae60;
+  color: #ffffff;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #219150;
+}
+
+/* 5. Garis Pemisah (ATAU) */
+.separator {
+  text-align: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background-color: #ddd;
+}
+
+.separator::before { left: 0; }
+.separator::after { right: 0; }
+
+.separator span {
+  background-color: #ffffff;
+  padding: 0 8px;
+  color: #888;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 6. Butang Log Masuk Google SSO */
+.btn-google {
+  width: 100%;
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.btn-google:hover {
+  background-color: #f8f9fa;
+}
+
+.btn-google img {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+
+/* 7. Footer Pautan Daftar */
+.login-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #666;
+}
+
+.login-footer a {
+  color: #27ae60;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
