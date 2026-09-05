@@ -1,0 +1,7 @@
+# AI Usage Log
+
+| Tanggal | Tujuan Penggunaan AI | Prompt Ringkas | Hasil | Verifikasi | Keputusan Manusia |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| 2026-09-05 | Membantu perbaikan tampilan background dan pembuatan elemen UI pop-up | Mengatasi gambar background tidak muncul, membuat form login & pendaftaran `register.html` | Solusi perbaikan path gambar, perbaikan sintaks CSS, serta kode HTML & CSS untuk UI login & registrasi | Menguji tampilan halaman di browser dan memastikan gambar serta style ter-render dengan benar | Diterima dan diterapkan sepenuhnya pada projek |
+| 2026-09-05 | Membuat kerangka dokumen `README.md` | Meminta isi file `README.md` lengkap dengan deskripsi proyek, teknologi, flowchart Mermaid, dan alur penggunaan | Dibuatkan draf markdown lengkap berisi identitas, deskripsi proyek, struktur folder, dan diagram alur sistem | Memeriksa struktur teks markdown dan kesesuaian alur kerja pendaftaran pasien | Diterima dan disalin ke file `README.md` |
+| 2026-09-05 | Membantu menyusun dan merapikan file log penggunaan AI (`AI_USAGE_LOG.md`) | Membantu membuat log penggunaan AI dalam bentuk tabel bahasa Indonesia | Menyediakan teks dan format tabel pencatatan log penggunaan AI yang terstruktur | Memeriksa kesesuaian isi log dengan riwayat interaksi pengerjaan frontend & Git | Diterima dan disesuaikan dengan format tabel dokumen |
