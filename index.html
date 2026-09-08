@@ -3,60 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login | Puskesmas Sei Taiwan</title>
+  <title>Dashboard Pasien | UPTD Puskesmas Sei Taiwan</title>
   
-  <!-- Panggil CSS Background & Style Utama -->
   <link rel="stylesheet" href="Background.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- KOTAK/POP-UP PUTIH UTAMA -->
-  <div class="login-container">
-    
-    <!-- Logo & Tajuk -->
-    <div class="login-header">
-      <img src="logo-puskesmas.png" alt="Logo Puskesmas Sei Taiwan" class="logo-img">
-      <h2>Sistem Informasi</h2>
-      <h3>Puskesmas Sei Taiwan</h3>
-    </div>
-
-    <!-- Form Login -->
-    <form id="loginForm">
-      <div class="login-box">
-        
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" id="username" placeholder="Masukkan Username" required>
-        </div>
-
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" placeholder="Masukkan Password" required>
-        </div>
-
-        <button type="submit" class="btn-login">Masuk ke Portal</button>
-
-        <!-- Garis Pemisah -->
-        <div class="separator">
-          <span>ATAU</span>
-        </div>
-
-        <!-- Butang Login Google SSO -->
-        <button type="button" class="btn-google">
-          <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google Logo">
-          Masuk dengan Google
-        </button>
-
-        <!-- Footer / Pautan Daftar -->
-        <div class="login-footer">
-          <p>Belum punya akun? <a href="#">Daftar Pasien Baru</a></p>
-        </div>
-
+  <!-- HEADER & NAVIGASI DENGAN MENU TITIK TIGA -->
+  <header>
+    <nav class="navbar" aria-label="Navigasi Utama Dashboard">
+      <div class="nav-logo">
+        <img src="logo-puskesmas.png" alt="Logo Puskesmas Sei Taiwan" width="36" height="36">
+        <span>Puskesmas Sei Taiwan</span>
       </div>
-    </form>
 
-  </div>
+      <div class="user-info-header">
+        <span>Selamat Datang, <strong>Ahmad Yani</strong></span>
+        <span class="badge-penjamin">BPJS Kesehatan</span>
+      </div>
+
+      <!-- Menu Dropdown Titik Tiga -->
+      <div class="menu-dropdown-container">
+        <button id="menuBtn" class="menu-btn" aria-label="Buka Menu Navigasi" aria-expanded="false">&#8285;</button>
+        <ul id="dropdownMenu" class="dropdown-menu">
+          <li><a href="#ringkasan">🏠 Beranda</a></li>
+          <li><a href="#ambil-antrean">🎟️ Ambil Antrean Baru</a></li>
+          <li><a href="#riwayat">📋 Riwayat Berobat</a></li>
+          <li class="divider"></li>
+          <li><a href="index.html" class="logout-link">🚪 Keluar (Logout)</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- KONTEN UTAMA (MAIN) -->
+  <main class="dashboard-main">
+
+    <!-- SECTION 1: RINGKASAN PROFIL PASIEN -->
+    <section id="ringkasan" aria-labelledby="heading-ringkasan">
+      <h1 id="heading-ringkasan">Dashboard Layanan Pasien</h1>
+      <div class="user-card">
+        <p><strong>Nama Pasien:</strong> Ahmad Yani</p>
+        <p><strong>NIK:</strong> 3276051234560001</p>
+        <p><strong>Status Penjamin:</strong> BPJS Kesehatan</p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: LAYANAN ANTREAN ONLINE (ARTICLE & FORM) -->
+    <section id="ambil-antrean" aria-labelledby="heading-antrean">
+      <h2 id="heading-antrean">Layanan Antrean Online</h2>
+      
+      <div class="antrean-wrapper">
+        <!-- ARTICLE: KARTU NOMOR ANTREAN AKTIF -->
+        <article class="antrean-card">
+          <h3>Nomor Antrean Aktif Anda Hari Ini</h3>
+          <div class="nomor-antrean">A-014</div>
+          <p><strong>Poli:</strong> Poli Umum</p>
+          <p><strong>Estimasi Dilayani:</strong> Pkl. 09:30 WITA</p>
+          <span class="status-badge">Menunggu Panggilan</span>
+        </article>
+
+        <!-- FORM: AMBIL NOMOR ANTREAN BARU -->
+        <div class="form-antrean-card">
+          <h3>Ambil Nomor Antrean Baru</h3>
+          <form id="formAntrean" action="#" method="POST">
+            <div class="form-group">
+              <label for="poli">Pilih Poliklinik Tujuan</label>
+              <select id="poli" name="poli" required aria-required="true">
+                <option value="">-- Pilih Poliklinik --</option>
+                <option value="umum">Poli Umum</option>
+                <option value="gigi">Poli Gigi & Mulut</option>
+                <option value="kia">Poli KIA/KB</option>
+                <option value="anak">Poli Anak</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tanggal">Tanggal Kunjungan</label>
+              <input type="date" id="tanggal" name="tanggal" required aria-required="true">
+            </div>
+
+            <button type="submit" class="btn-login">Dapatkan Nomor Antrean</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: RIWAYAT CATATAN KUNJUNGAN -->
+    <section id="riwayat" aria-labelledby="heading-riwayat">
+      <h2 id="heading-riwayat">Riwayat Catatan Kunjungan</h2>
+      
+      <table class="table-riwayat">
+        <thead>
+          <tr>
+            <th>Tanggal</th>
+            <th>Poliklinik</th>
+            <th>Dokter</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><time datetime="2026-09-15">15/09/2026</time></td>
+            <td>Poli Umum</td>
+            <td>dr. Budi Santoso</td>
+            <td><span class="status-selesai">Selesai Berobat</span></td>
+          </tr>
+          <tr>
+            <td><time datetime="2026-08-20">20/08/2026</time></td>
+            <td>Poli Gigi</td>
+            <td>drg. Citra Dewi</td>
+            <td><span class="status-selesai">Selesai Berobat</span></td>
+          </tr>
+          <tr>
+            <td><time datetime="2026-07-02">02/07/2026</time></td>
+            <td>Poli Anak</td>
+            <td>dr. Andi Pratama</td>
+            <td><span class="status-batal">Batal</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- FOOTER HALAMAN -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h3>UPTD Puskesmas Sei Taiwan</h3>
+        <p>Jl. Lujoh RT. 05 Desa Sungai Manurung, Kecamatan Sebatik, Kode Pos 74832</p>
+      </div>
+      
+      <div class="footer-social">
+        <p>Ikuti Media Sosial Kami:</p>
+        <a href="https://www.instagram.com/puskesmas_sei_taiwan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Puskesmas Sei Taiwan">
+          📸 Instagram: @puskesmas_sei_taiwan
+        </a>
+      </div>
+
+      <div class="footer-copyright">
+        <p>&copy; 2026 Puskesmas Sei Taiwan. Hak Cipta Dilindungi Undang-Undang.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SKRIP DROPDOWN MENU TITIK TIGA -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', !isExpanded);
+      dropdownMenu.classList.toggle('active');
+    });
+
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    });
+  </script>
 
 </body>
 </html>
