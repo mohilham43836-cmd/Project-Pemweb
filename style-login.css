@@ -1,0 +1,175 @@
+/* Reset Margin & Padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set Background Gambar pada Body */
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Tambahkan ./ di depan nama gambar untuk memastikan path berada di root folder */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                    url('./Foto Puskesmas Sei Taiwan.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* Kartu Form Login di Tengah */
+.login-container {
+  background: #ffffff;
+  width: 100%;
+  max-width: 400px;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+.login-header h2 {
+  font-size: 15px;
+  color: #555;
+  margin: 0;
+  font-weight: 500;
+}
+
+.login-header h3 {
+  font-size: 19px;
+  color: #008a43;
+  margin: 4px 0 0 0;
+  font-weight: 700;
+}
+
+.form-title {
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+  margin-bottom: 20px;
+}
+
+.form-title h4 {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+
+/* Form Input & Icon */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: #888;
+  font-size: 14px;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 10px 10px 10px 38px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border-color: #008a43;
+}
+
+/* Tombol Login */
+.btn-login {
+  width: 100%;
+  padding: 11px;
+  background-color: #008a43;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.btn-login:hover {
+  background-color: #006e35;
+}
+
+/* Separator 'Atau' */
+.separator {
+  text-align: center;
+  margin: 18px 0;
+  position: relative;
+}
+
+.separator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e0e0e0;
+  z-index: 1;
+}
+
+.separator span {
+  background: #ffffff;
+  padding: 0 10px;
+  color: #777;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Tombol Google */
+.btn-google {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff;
+  color: #444;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-google img {
+  width: 18px;
+  height: 18px;
+}
