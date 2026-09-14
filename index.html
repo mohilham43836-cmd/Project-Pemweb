@@ -3,169 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Pasien | UPTD Puskesmas Sei Taiwan</title>
+  <title>UPTD Puskesmas Sei Taiwan | Portal Layanan Kesehatan</title>
   
-  <link rel="stylesheet" href="Background.css">
-  <link rel="stylesheet" href="style.css">
+  <!-- FontAwesome Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Landing Page Responsif -->
+  <link rel="stylesheet" href="style.common.css">
+  <link rel="stylesheet" href="style-landing.css">
 </head>
 <body>
 
-  <!-- HEADER & NAVIGASI DENGAN MENU TITIK TIGA -->
-  <header>
-    <nav class="navbar" aria-label="Navigasi Utama Dashboard">
-      <div class="nav-logo">
-        <img src="logo-puskesmas.png" alt="Logo Puskesmas Sei Taiwan" width="36" height="36">
-        <span>Puskesmas Sei Taiwan</span>
-      </div>
-
-      <div class="user-info-header">
-        <span>Selamat Datang, <strong>Ahmad Yani</strong></span>
-        <span class="badge-penjamin">BPJS Kesehatan</span>
-      </div>
-
-      <!-- Menu Dropdown Titik Tiga -->
-      <div class="menu-dropdown-container">
-        <button id="menuBtn" class="menu-btn" aria-label="Buka Menu Navigasi" aria-expanded="false">&#8285;</button>
-        <ul id="dropdownMenu" class="dropdown-menu">
-          <li><a href="#ringkasan">🏠 Beranda</a></li>
-          <li><a href="#ambil-antrean">🎟️ Ambil Antrean Baru</a></li>
-          <li><a href="#riwayat">📋 Riwayat Berobat</a></li>
-          <li class="divider"></li>
-          <li><a href="index.html" class="logout-link">🚪 Keluar (Logout)</a></li>
-        </ul>
-      </div>
+  <!-- HEADER / NAVBAR PUBLIK -->
+  <header class="navbar">
+    <div class="nav-logo">
+      <img src="logo-puskesmas.png" alt="Logo Puskesmas" width="36" height="36">
+      <h1>Puskesmas Sei Taiwan</h1>
+    </div>
+    <nav class="nav-links">
+      <a href="#beranda">Beranda</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#jadwal">Jadwal</a>
+      <a href="login.html" class="btn btn-primary">Masuk Portal</a>
     </nav>
   </header>
 
-  <!-- KONTEN UTAMA (MAIN) -->
-  <main class="dashboard-main">
-
-    <!-- SECTION 1: RINGKASAN PROFIL PASIEN -->
-    <section id="ringkasan" aria-labelledby="heading-ringkasan">
-      <h1 id="heading-ringkasan">Dashboard Layanan Pasien</h1>
-      <div class="user-card">
-        <p><strong>Nama Pasien:</strong> Ahmad Yani</p>
-        <p><strong>NIK:</strong> 3276051234560001</p>
-        <p><strong>Status Penjamin:</strong> BPJS Kesehatan</p>
+  <!-- HERO SECTION DENGAN GAMBAR PUSKESMAS -->
+  <section id="beranda" class="hero-section" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('Foto Puskesmas Sei Taiwan.jpg'); background-size: cover; background-position: center;">
+    <div class="hero-content">
+      <h2>Pusat Kesehatan Masyarakat Terpadu</h2>
+      <p>Melayani dengan sepenuh hati untuk masyarakat Sebatik, Nunukan. Akses layanan kesehatan jadi lebih mudah, cepat, dan transparan.</p>
+      <div class="hero-buttons">
+        <a href="login.html" class="btn btn-primary"><i class="fa-solid fa-right-to-bracket"></i> Login Pasien</a>
+        <a href="#layanan" class="btn btn-secondary"><i class="fa-solid fa-info-circle"></i> Lihat Layanan</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- SECTION 2: LAYANAN ANTREAN ONLINE (ARTICLE & FORM) -->
-    <section id="ambil-antrean" aria-labelledby="heading-antrean">
-      <h2 id="heading-antrean">Layanan Antrean Online</h2>
-      
-      <div class="antrean-wrapper">
-        <!-- ARTICLE: KARTU NOMOR ANTREAN AKTIF -->
-        <article class="antrean-card">
-          <h3>Nomor Antrean Aktif Anda Hari Ini</h3>
-          <div class="nomor-antrean">A-014</div>
-          <p><strong>Poli:</strong> Poli Umum</p>
-          <p><strong>Estimasi Dilayani:</strong> Pkl. 09:30 WITA</p>
-          <span class="status-badge">Menunggu Panggilan</span>
-        </article>
-
-        <!-- FORM: AMBIL NOMOR ANTREAN BARU -->
-        <div class="form-antrean-card">
-          <h3>Ambil Nomor Antrean Baru</h3>
-          <form id="formAntrean" action="#" method="POST">
-            <div class="form-group">
-              <label for="poli">Pilih Poliklinik Tujuan</label>
-              <select id="poli" name="poli" required aria-required="true">
-                <option value="">-- Pilih Poliklinik --</option>
-                <option value="umum">Poli Umum</option>
-                <option value="gigi">Poli Gigi & Mulut</option>
-                <option value="kia">Poli KIA/KB</option>
-                <option value="anak">Poli Anak</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="tanggal">Tanggal Kunjungan</label>
-              <input type="date" id="tanggal" name="tanggal" required aria-required="true">
-            </div>
-
-            <button type="submit" class="btn-login">Dapatkan Nomor Antrean</button>
-          </form>
+  <!-- SECTION LAYANAN UTAMA -->
+  <main class="main-container">
+    <section id="layanan">
+      <h3 class="section-title">Layanan Unggulan Kami</h3>
+      <div class="services-grid">
+        <div class="card service-card">
+          <i class="fa-solid fa-user-doctor"></i>
+          <h4>Poli Umum & BP</h4>
+          <p>Pemeriksaan kesehatan umum dan konsultasi medis harian.</p>
+        </div>
+        <div class="card service-card">
+          <i class="fa-solid fa-tooth"></i>
+          <h4>Poli Gigi</h4>
+          <p>Perawatan, penambalan, dan pencabutan gigi profesional.</p>
+        </div>
+        <div class="card service-card">
+          <i class="fa-solid fa-baby"></i>
+          <h4>KIA & Imunisasi</h4>
+          <p>Kesehatan ibu, anak, dan layanan imunisasi lengkap balita.</p>
+        </div>
+        <div class="card service-card">
+          <i class="fa-solid fa-pills"></i>
+          <h4>Apotek / Farmasi</h4>
+          <p>Penyediaan obat resmi sesuai resep dokter penanggung jawab.</p>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 3: RIWAYAT CATATAN KUNJUNGAN -->
-    <section id="riwayat" aria-labelledby="heading-riwayat">
-      <h2 id="heading-riwayat">Riwayat Catatan Kunjungan</h2>
-      
-      <table class="table-riwayat">
-        <thead>
-          <tr>
-            <th>Tanggal</th>
-            <th>Poliklinik</th>
-            <th>Dokter</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><time datetime="2026-09-15">15/09/2026</time></td>
-            <td>Poli Umum</td>
-            <td>dr. Budi Santoso</td>
-            <td><span class="status-selesai">Selesai Berobat</span></td>
-          </tr>
-          <tr>
-            <td><time datetime="2026-08-20">20/08/2026</time></td>
-            <td>Poli Gigi</td>
-            <td>drg. Citra Dewi</td>
-            <td><span class="status-selesai">Selesai Berobat</span></td>
-          </tr>
-          <tr>
-            <td><time datetime="2026-07-02">02/07/2026</time></td>
-            <td>Poli Anak</td>
-            <td>dr. Andi Pratama</td>
-            <td><span class="status-batal">Batal</span></td>
-          </tr>
-        </tbody>
-      </table>
+    <!-- SECTION INFORMASI / STATISTIK -->
+    <section class="info-section-landing">
+      <div class="card stat-card">
+        <i class="fa-solid fa-clock"></i>
+        <div>
+          <h4>Jam Operasional</h4>
+          <p>Senin - Kamis: 08.00 - 14.00 WITA</p>
+        </div>
+      </div>
+      <div class="card stat-card">
+        <i class="fa-solid fa-phone-volume"></i>
+        <div>
+          <h4>Layanan Darurat</h4>
+          <p>Siaga 24 Jam untuk Unit Gawat Darurat (UGD)</p>
+        </div>
+      </div>
     </section>
-
   </main>
 
-  <!-- FOOTER HALAMAN -->
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-content">
-      <div class="footer-info">
-        <h3>UPTD Puskesmas Sei Taiwan</h3>
-        <p>Jl. Lujoh RT. 05 Desa Sungai Manurung, Kecamatan Sebatik, Kode Pos 74832</p>
-      </div>
-      
-      <div class="footer-social">
-        <p>Ikuti Media Sosial Kami:</p>
-        <a href="https://www.instagram.com/puskesmas_sei_taiwan/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Puskesmas Sei Taiwan">
-          📸 Instagram: @puskesmas_sei_taiwan
-        </a>
-      </div>
-
-      <div class="footer-copyright">
-        <p>&copy; 2026 Puskesmas Sei Taiwan. Hak Cipta Dilindungi Undang-Undang.</p>
-      </div>
-    </div>
+    <p>&copy; 2026 UPTD Puskesmas Sei Taiwan, Sebatik, Nunukan. Hak Cipta Dilindungi Undang-Undang.</p>
   </footer>
-
-  <!-- SKRIP DROPDOWN MENU TITIK TIGA -->
-  <script>
-    const menuBtn = document.getElementById('menuBtn');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-
-    menuBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
-      menuBtn.setAttribute('aria-expanded', !isExpanded);
-      dropdownMenu.classList.toggle('active');
-    });
-
-    document.addEventListener('click', () => {
-      dropdownMenu.classList.remove('active');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    });
-  </script>
 
 </body>
 </html>
