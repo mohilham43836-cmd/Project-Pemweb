@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard Pasien | UPTD Puskesmas Sei Taiwan</title>
   
-  <!-- FontAwesome Icon CDN Terbaru (Bebas Warning Tracking Prevention) -->
+  <!-- FontAwesome Icon CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <!-- CSS Khusus Dashboard -->
@@ -21,6 +21,10 @@
     </div>
     
     <div class="user-profile">
+      <!-- FITUR INTERAKSI 3: Toggle Dark Mode (localStorage) -->
+      <button id="themeToggle" class="btn-theme" title="Ubah Tema">
+        <i class="fa-solid fa-moon"></i>
+      </button>
       <span class="user-name"><i class="fa-regular fa-user-circle"></i> Pasien Terdaftar</span>
       <a href="index.html" class="btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Keluar</a>
     </div>
@@ -29,7 +33,6 @@
   <!-- KONTEN UTAMA DASHBOARD -->
   <main class="dashboard-container">
     
-    <!-- BANNER SELAMAT DATANG -->
     <div class="welcome-banner">
       <h2>Selamat Datang di Portal Pelayanan Pasien</h2>
       <p>Sistem Informasi Manajemen Layanan Kesehatan UPTD Puskesmas Sei Taiwan, Sebatik.</p>
@@ -49,7 +52,7 @@
         <div class="stat-icon"><i class="fa-solid fa-ticket"></i></div>
         <div class="stat-info">
           <h3>Antrean Berjalan</h3>
-          <p>A - 014</p>
+          <p id="totalAntreanCount">A - 014</p>
         </div>
       </div>
 
@@ -62,59 +65,32 @@
       </div>
     </div>
 
-    <!-- MENU UTAMA / ALUR LAYANAN -->
-    <h3 class="section-title">Menu Pelayanan Utama</h3>
-    <div class="services-grid">
-      <a href="#" class="service-card">
-        <i class="fa-solid fa-file-signature"></i>
-        <span>Pendaftaran Online</span>
-      </a>
-
-      <a href="#" class="service-card">
-        <i class="fa-solid fa-list-ol"></i>
-        <span>Nomor Antrean</span>
-      </a>
-
-      <a href="#" class="service-card">
-        <i class="fa-solid fa-user-md"></i>
-        <span>Jadwal Dokter</span>
-      </a>
-
-      <a href="#" class="service-card">
-        <i class="fa-solid fa-notes-medical"></i>
-        <span>Riwayat Berobat</span>
-      </a>
-    </div>
-
     <!-- TABEL JADWAL & STATUS ANTREAN PASIEN -->
     <div class="info-section">
-      <h3 class="section-title">Status Pendaftaran & Antrean Anda</h3>
+      <div class="table-header">
+        <h3 class="section-title">Status Pendaftaran & Antrean Pasien</h3>
+        
+        <!-- FITUR INTERAKSI 1: Filter/Pencarian DOM Event -->
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Cari nama pasien atau poli...">
+        </div>
+      </div>
+
       <div class="table-responsive">
         <table>
           <thead>
             <tr>
-              <th>Tanggal</th>
+              <th>Kode</th>
+              <th>Nama Pasien</th>
               <th>Poli Tujuan</th>
-              <th>No. Antrean</th>
-              <th>Dokter Penanggung Jawab</th>
+              <th>Umur</th>
               <th>Status</th>
+              <th>Aksi</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>08 Sep 2026</td>
-              <td>Poli Umum</td>
-              <td>A - 018</td>
-              <td>dr. Ahmad Ridwan</td>
-              <td><span class="badge badge-warning">Menunggu Dipanggil</span></td>
-            </tr>
-            <tr>
-              <td>12 Agu 2026</td>
-              <td>Poli Gigi</td>
-              <td>B - 005</td>
-              <td>drg. Siti Nurhaliza</td>
-              <td><span class="badge badge-success">Selesai Berobat</span></td>
-            </tr>
+          <tbody id="patientTableBody">
+            <!-- Data akan di-render secara dinamis oleh DOM di main.js -->
           </tbody>
         </table>
       </div>
@@ -122,11 +98,24 @@
 
   </main>
 
+  <!-- FITUR INTERAKSI 2: Modal Detail Pasien -->
+  <div id="detailModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h3><i class="fa-solid fa-id-card"></i> Detail Antrean Pasien</h3>
+      <hr><br>
+      <div id="modalBody">
+        <!-- Detail pasien akan dimasukkan lewat DOM innerHTML -->
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <p>&copy; 2026 UPTD Puskesmas Sei Taiwan. Hak Cipta Dilindungi Undang-Undang.</p>
   </footer>
 
+  <!-- SCRIPT MODUL JS -->
   <script type="module" src="main.js"></script>
 
 </body>
