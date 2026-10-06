@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Antrean Online | UPTD Puskesmas Sei Taiwan</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style-dashboard.css">
+  <link rel="stylesheet" href="style-form.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-logo">
+      <img src="logo-puskesmas.png" alt="Logo Puskesmas" width="36" height="36">
+      <h1>Puskesmas Sei Taiwan</h1>
+    </div>
+    <div class="user-profile">
+      <a href="dashboard.html" class="btn-logout"><i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard</a>
+    </div>
+  </header>
+
+  <!-- CONTAINER FORM -->
+  <main class="dashboard-container">
+    <div class="form-card">
+      <h2 class="form-title"><i class="fa-solid fa-file-signature"></i> Form Pendaftaran Antrean Pasien</h2>
+      <p class="form-subtitle">Isi data calon pasien dengan benar untuk mengambil nomor antrean berobat.</p>
+
+      <!-- Alert Status -->
+      <div id="alertSuccess" class="alert alert-success" role="alert" aria-live="polite" style="display: none;">
+        <i class="fa-solid fa-circle-check"></i> Pendaftaran Berhasil! Nomor Antrean Anda: <strong id="registeredQueueNumber">A-019</strong>
+      </div>
+
+      <form id="registrationForm" novalidate>
+        
+        <!-- Field 1: NIK -->
+        <div class="form-group">
+          <label for="nik">NIK (Nomor Induk Kependudukan) <span class="required">*</span></label>
+          <input type="text" id="nik" name="nik" placeholder="16 digit NIK sesuai KTP" maxlength="16" aria-describedby="nikError" required>
+          <small id="nikError" class="error-message" aria-live="polite"></small>
+        </div>
+
+        <!-- Field 2: Nama Pasien -->
+        <div class="form-group">
+          <label for="nama">Nama Lengkap Pasien <span class="required">*</span></label>
+          <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" aria-describedby="namaError" required>
+          <small id="namaError" class="error-message" aria-live="polite"></small>
+        </div>
+
+        <!-- Field 3: Nomor HP -->
+        <div class="form-group">
+          <label for="noHp">Nomor HP / WhatsApp <span class="required">*</span></label>
+          <input type="tel" id="noHp" name="noHp" placeholder="Contoh: 081234567890" aria-describedby="noHpError" required>
+          <small id="noHpError" class="error-message" aria-live="polite"></small>
+        </div>
+
+        <!-- Field 4: Poli Tujuan -->
+        <div class="form-group">
+          <label for="poli">Poli Tujuan <span class="required">*</span></label>
+          <select id="poli" name="poli" aria-describedby="poliError" required>
+            <option value="">-- Pilih Poliklinik --</option>
+            <option value="Poli Umum">Poli Umum</option>
+            <option value="Poli Gigi">Poli Gigi</option>
+            <option value="Poli KIA / KB">Poli KIA / KB</option>
+            <option value="Poli Lansia">Poli Lansia</option>
+          </select>
+          <small id="poliError" class="error-message" aria-live="polite"></small>
+        </div>
+
+        <!-- Field 5: Tanggal Kunjungan -->
+        <div class="form-group">
+          <label for="tanggal">Tanggal Kunjungan <span class="required">*</span></label>
+          <input type="date" id="tanggal" name="tanggal" aria-describedby="tanggalError" required>
+          <small id="tanggalError" class="error-message" aria-live="polite"></small>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="btnSubmit" class="btn-submit">
+          <i class="fa-solid fa-paper-plane"></i> Daftar Antrean Sekarang
+        </button>
+
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 UPTD Puskesmas Sei Taiwan. Hak Cipta Dilindungi Undang-Undang.</p>
+  </footer>
+
+  <script type="module" src="form-validation.js"></script>
+</body>
+</html>

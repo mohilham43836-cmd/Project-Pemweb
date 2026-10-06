@@ -52,3 +52,13 @@ proyek_pemweb/
 │
 ├── Foto Puskemas Sei Taiwan.jpg # Visual Latar Belakang Bangunan
 └── logo-puskesmas.png          # Logo Resmi Puskesmas Sei Taiwan
+
+## Catatan Peer Review (Tugas Pertemuan 6)
+- **Reviewer**: Anggota Tim / Peer Reviewer
+- **Umpan Balik**:
+  1. Validasi NIK dan No HP sudah real-time saat pengguna pindah fokus input (`blur`).
+  2. Aksesibilitas form sangat baik menggunakan atribut `aria-describedby` dan `aria-live` untuk pesan error.
+  3. Desain responsif dan warna kontras pesan error terlihat jelas.
+
+## Refleksi Singkat
+Pengerjaan tugas ini memberikan pemahaman tentang pentingnya *client-side validation* untuk meminimalisir input yang tidak valid sebelum data dikirimkan. Penambahan fitur aksesibilitas HTML5 (seperti `aria-live="polite"`) sangat penting agar pembaca layar (*screen reader*) dapat memberitahukan pesan error secara otomatis kepada pengguna dengan disabilitas.
