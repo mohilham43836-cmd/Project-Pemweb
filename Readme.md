@@ -62,3 +62,16 @@ proyek_pemweb/
 
 ## Refleksi Singkat
 Pengerjaan tugas ini memberikan pemahaman tentang pentingnya *client-side validation* untuk meminimalisir input yang tidak valid sebelum data dikirimkan. Penambahan fitur aksesibilitas HTML5 (seperti `aria-live="polite"`) sangat penting agar pembaca layar (*screen reader*) dapat memberitahukan pesan error secara otomatis kepada pengguna dengan disabilitas.
+
+## 🌐 Dokumentasi API / Sumber Data (Tugas Pertemuan 7)
+- **Endpoint / Sumber Data**: File JSON lokal `data-antrean.json` (Mensimulasikan REST API endpoint antrean rumah sakit/puskesmas).
+- **Metode Asinkron**: Menggunakan `fetch()`, `async/await`, blok penanganan kesalahan `try/catch`, dan validasi status jaringan `response.ok`.
+- **Fitur Mini Dashboard**:
+  1. **Loading & Error State**: Indikator *spinner* saat data ditarik dan penanganan pesan error beserta tombol *Retry*.
+  2. **Data Rendering**: Kartu statistik total antrean serta tabel interaktif.
+  3. **Search & Filter**: Fitur pencarian data secara *real-time* berdasarkan nama pasien atau poli tujuan.
+
+### Cara Menjalankan Proyek:
+1. Pastikan ekstensi **Live Server** terpasang di Visual Studio Code.
+2. Klik kanan pada file `mini-dashboard.html` lalu pilih **"Open with Live Server"**.
+3. Buka tab Browser untuk melihat hasil *mini dashboard* yang terhubung secara asinkron.

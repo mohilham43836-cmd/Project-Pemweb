@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "data": {
+    "statistik": {
+      "totalAntrean": 42,
+      "sedangDilayani": 3,
+      "selesai": 39
+    },
+    "pasien": [
+      { "id": "A-001", "nik": "6571011234560001", "nama": "Siti Aminah", "poli": "Poli Umum", "status": "Selesai", "waktu": "08:15" },
+      { "id": "A-002", "nik": "6571011234560002", "nama": "Budi Santoso", "poli": "Poli Gigi", "status": "Selesai", "waktu": "08:30" },
+      { "id": "A-003", "nik": "6571011234560003", "nama": "Dewi Lestari", "poli": "Poli KIA / KB", "status": "Sedang Dilayani", "waktu": "09:00" },
+      { "id": "A-004", "nik": "6571011234560004", "nama": "Ahmad Fauzi", "poli": "Poli Lansia", "status": "Sedang Dilayani", "waktu": "09:15" },
+      { "id": "A-005", "nik": "6571011234560005", "nama": "Suryani", "poli": "Poli Umum", "status": "Menunggu", "waktu": "09:30" },
+      { "id": "A-006", "nik": "6571011234560006", "nama": "Rian Hidayat", "poli": "Poli Gigi", "status": "Menunggu", "waktu": "09:45" }
+    ]
+  }
+}

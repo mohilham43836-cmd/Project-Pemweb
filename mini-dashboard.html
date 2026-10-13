@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Dashboard API | Puskesmas Sei Taiwan</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style-dashboard.css">
+  <link rel="stylesheet" href="style-api.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-logo">
+      <img src="logo-puskesmas.png" alt="Logo Puskesmas" width="36" height="36">
+      <h1>Puskesmas Sei Taiwan - Live Dashboard</h1>
+    </div>
+    <div class="user-profile">
+      <a href="dashboard.html" class="btn-logout"><i class="fa-solid fa-arrow-left"></i> Kembali</a>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <div class="api-section-header">
+      <h2><i class="fa-solid fa-chart-line"></i> Statistik & Monitoring Antrean Real-Time</h2>
+      <p>Data dimuat langsung dari sumber asinkron menggunakan Fetch API.</p>
+    </div>
+
+    <!-- STAT CARDS -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <i class="fa-solid fa-users icon-blue"></i>
+        <div>
+          <h3>Total Antrean</h3>
+          <p id="statTotal" class="stat-value">-</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <i class="fa-solid fa-user-clock icon-orange"></i>
+        <div>
+          <h3>Sedang Dilayani</h3>
+          <p id="statActive" class="stat-value">-</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <i class="fa-solid fa-circle-check icon-green"></i>
+        <div>
+          <h3>Selesai</h3>
+          <p id="statDone" class="stat-value">-</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEARCH & FILTER SECTION -->
+    <div class="table-card">
+      <div class="table-header-flex">
+        <h3>Daftar Kunjungan Pasien Hari Ini</h3>
+        <div class="search-box">
+          <i class="fa-solid fa-search"></i>
+          <input type="text" id="searchPasien" placeholder="Cari nama pasien atau poli...">
+        </div>
+      </div>
+
+      <!-- LOADING STATE -->
+      <div id="loadingState" class="state-container">
+        <i class="fa-solid fa-spinner fa-spin fa-2x"></i>
+        <p>Memuat data antrean dari server...</p>
+      </div>
+
+      <!-- ERROR STATE -->
+      <div id="errorState" class="state-container error-box" style="display: none;">
+        <i class="fa-solid fa-triangle-exclamation fa-2x"></i>
+        <p id="errorMessage">Gagal memuat data.</p>
+        <button id="btnRetry" class="btn-retry">Coba Lagi</button>
+      </div>
+
+      <!-- TABLE DATA -->
+      <div class="table-responsive">
+        <table id="tablePasien" style="display: none;">
+          <thead>
+            <tr>
+              <th>No. Antrean</th>
+              <th>NIK</th>
+              <th>Nama Pasien</th>
+              <th>Poli Tujuan</th>
+              <th>Status</th>
+              <th>Waktu</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyPasien">
+            <!-- Data terisi lewat JavaScript -->
+          </tbody>
+        </table>
+      </div>
+      
+      <p id="noDataMessage" style="display: none; text-align: center; padding: 20px; color: #666;">Data pasien tidak ditemukan.</p>
+    </div>
+  </main>
+
+  <script type="module" src="api-dashboard.js"></script>
+</body>
+</html>
